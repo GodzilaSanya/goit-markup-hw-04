@@ -565,7 +565,10 @@ body {
   margin-top: 0;
   margin-bottom: 0;
 }
-.examples .desc {
+
+/* Була помилка в класі черзте марджин не суинувсь */
+
+.examples-work-title .desc {
   font-size: 16px;
   line-height: 1.88;
 
