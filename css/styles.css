@@ -104,9 +104,6 @@ body {
 .site-nav .item:not(:last-child) {
   margin-right: 50px;
 }
-/* .site-nav .item:last-child {
-  margin-right: 0;
-} */
 
 .auth-nav {
   display: flex;
@@ -125,10 +122,21 @@ body {
 
   color: var(--second-text-color);
 
-  display: block;
+  display: flex;
+  align-items: center;
   padding-top: 32px;
   padding-bottom: 32px;
 }
+
+.icon-nav {
+  display: flex;
+  margin-right: 10px;
+
+  fill: currentColor;
+}
+
+.auth-nav .link:hover .icon-nav,
+.auth-nav .link:focus .icon-nav,
 .auth-nav .link:hover,
 .auth-nav .link:focus,
 .site-nav .link:hover,
@@ -139,13 +147,28 @@ body {
 .contacts .location.link:hover,
 .contacts .location.link:focus {
   color: var(--focus-color);
+  fill: currentColor;
 }
+
 /*-------------------------------- HERO------------------------------------ */
 .hero {
-  background-color: var(--footer-hero-color);
   padding-top: 200px;
   padding-bottom: 200px;
 }
+
+.overlay {
+  max-width: 1600px;
+  min-height: 600px;
+  margin-left: auto;
+  margin-right: auto;
+
+  background-color: #c4c4c4;
+  background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url('../images/hero.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
 .hero-headlines {
   font-weight: 900;
   font-size: 44px;
@@ -202,7 +225,7 @@ body {
   margin: -1px;
 }
 
-/*--------------- Section headlines ------------------------------*/
+/* --------------------Особенности--------------------------- */
 .section-headlines,
 .examples-headlines {
   color: var(--headlines-color);
@@ -219,6 +242,18 @@ body {
 .features-list {
   display: flex;
 }
+
+.features-item-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 270px;
+  height: 120px;
+  background-color: var(--bg-color-section);
+  border-radius: 4px;
+  margin-bottom: 30px;
+}
+
 .features-item:not(:last-child) {
   max-width: 270px;
 
@@ -237,6 +272,7 @@ body {
 .section-desc {
   margin: 0;
 }
+
 /* --------------------Чем мы занимаемся -------------------------*/
 .title-work {
   font-weight: 700;
@@ -264,6 +300,7 @@ body {
   background-color: var(--bg-color-section);
 }
 
+.title-clients,
 .title-team {
   font-weight: 700;
   font-size: 36px;
@@ -313,7 +350,67 @@ body {
   line-height: 1.18;
   text-align: center;
 
-  margin: 0;
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.team-social {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 206px;
+  height: 44px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.team-social-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  fill: #afb1b8;
+}
+.team-social-link:hover,
+.team-social-link:focus {
+  background-color: var(--focus-color);
+  fill: var(--bg-color-main);
+}
+
+/* -----------------------CLIENTS----------------------------------- */
+
+.clients {
+  padding-top: var(--main-gap);
+  padding-bottom: var(--main-gap);
+}
+
+.clients-list {
+  display: flex;
+}
+
+.clients-item + .clients-item {
+  margin-left: 30px;
+}
+
+.clients-link {
+  display: block;
+  width: 170px;
+  height: 92px;
+  border: 1px solid #afb1b8;
+  box-sizing: border-box;
+  border-radius: 4px;
+  fill: #afb1b8;
+
+  padding: 16px 32px;
+}
+
+.clients-link:hover,
+.clients-link:focus {
+  border-color: var(--focus-color);
+  fill: var(--focus-color);
 }
 
 /*------------------------ FOOTER ----------------------------------*/
@@ -342,6 +439,52 @@ body {
 .contacts .link {
   font-style: normal;
   color: var(--second-text-color);
+}
+
+.footer .conteiner {
+  display: flex;
+  align-items: baseline;
+}
+
+.connect {
+  margin-left: 70px;
+}
+.connect-title {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+
+  color: #ffffff;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.connect-list {
+  display: flex;
+}
+
+.connect-item + .connect-item {
+  margin-left: 20px;
+}
+
+.connect-link {
+  display: flex;
+  width: 44px;
+  height: 44px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  fill: #ffffff;
+
+  justify-content: center;
+  align-items: center;
+}
+
+.connect-link:hover,
+.connect-link:focus {
+  background-color: var(--focus-color);
 }
 
 /*---------------- CSS PORTFOLIO -------------------------------------*/
@@ -379,6 +522,8 @@ body {
 .filter-button:focus {
   background-color: var(--focus-color);
   color: var(--bg-color-main);
+
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
 .examples-work-list {
@@ -394,6 +539,11 @@ body {
 
   margin-top: var(--portfolio-gap);
   margin-left: var(--portfolio-gap);
+}
+
+.examples-work-item:hover,
+.examples-work-item:focus {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
 .examples-work-title {
